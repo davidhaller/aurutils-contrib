@@ -6,4 +6,4 @@ As a frequent user of [aurutils](https://github.com/aurutils/aurutils), I found 
 
 * `aur clean` - Deletes all build and cache files created by aurutils (`~/.cache/aurutils`, `~/.config/aurutils` and `~/.local/share/aurutils`) to save disk space.
 * `aur purge <pkg>...` - Removes the given packages from the repository database and deletes the corresponding files from the repository directory.
-* `aur init` - Creates a new local pacman repository at `/var/aur`. Useful if you want to start all over again.
+* `aur init` - Overwrites your current repository with an empty, freshly initialized repository. Useful if you want to start all over again.

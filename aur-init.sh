@@ -1,5 +1,10 @@
 #!/bin/sh
 
-sudo rm -rf /var/aur
-sudo install -d /var/aur -o $USER
-repo-add /var/aur/aur.db.tar.zst
+repo=$(dirname $(aur repo --path))
+db=$(basename $(aur repo --path))
+
+sudo rm -rf $repo
+sudo install -d $repo -o $(whoami)
+
+cd $repo
+repo-add $db

@@ -1,10 +1,11 @@
 #!/bin/sh
 
-repo=$(dirname $(aur repo --path))
-db=$(basename $(aur repo --path))
+aur_repo=$(aur repo --path)
+aur_dir=$(dirname $aur_repo)
+aur_db=$(basename $aur_repo)
 
-sudo rm -rf $repo
-sudo install -d $repo -o $(whoami)
+sudo rm -r $aur_dir -f
+sudo install -d $aur_dir -o $(whoami)
 
-cd $repo
-repo-add $db
+cd $aur_dir
+repo-add $aur_db
